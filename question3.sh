@@ -10,8 +10,12 @@ function is_prime() {
     return
   fi
 
-  # Loop from 2 to num/2+1 to check the num has divisors
-  for (( i=2;i<$((num/2 + 1));i=$((i+1))));
+  # Loop from 2 to sqrt(num) to check the num has divisors
+  #using basic calucator finding square root of the argument that passed to the function is_prime
+  sqrt_num=$(echo "sqrt($num)" | bc)
+  
+  #looping upto sqrt(num) from 2
+  for (( i=2;i<=$sqrt_num;i=$((i+1))));
     do
         if [[ $(($num%$i)) -eq 0 ]]; then # if found it is not prime numer
           echo "$num is not a prime number."
