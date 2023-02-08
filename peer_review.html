@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer review</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body{
+            margin-left: 40px;
+            margin-right: 50px;
+            background-color: rgb(217, 212, 206);
+        }
+        #head{
+            text-align: center;
+            color:rgb(69, 73, 194)
+        }
+
+        .ques{
+            color: rgb(219, 48, 202);
+        }
+        .user{
+            color:rgb(11, 84, 92);
+            text-decoration: underline;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div>
+        <div id="head">
+            <h1>Commanad Line Assignment</h1>
+            <h4> PEER LEARNING DOCUMENT</h4>
+            
+            
+        </div>
+        <hr>
+        <h3 style="color:rgb(31, 8, 131)">Problem Statement - 	</h3>
+        <div>
+            
+            <p ><b class="ques">Question 1.</b> Write a bash script to get the current date, time, username, home directory and current working directory.	</p>
+        
+            <p ><b class="ques">Question 2.</b> Write a bash script (name Table.sh) to print the Table of a number by using a while loop. It should support the following requirements.	</p>
+            <ul>
+                <li> The script should accept the input from the command line.
+                </li>
+                <li> If you don’t input any data, then display an error message to execute the script correctly.</li>
+            </ul>
+            <p><b>Question 3.</b> Write a Function in bash script to check if the number is prime or not? It should support the following requirement.</p>
+            <p style="margin-left:20px;"> The script should accept the input from the User.</p>
+
+
+            <p ><b class="ques">Question 4.</b> Create a bash script that supports the following requirement.</p>			
+                
+                <ul>
+                    <li>Create a folder ‘Assignment’. </li>
+                    <li> Create a file ‘File1.txt’ inside ‘Assignment’ Folder.</li>
+                    <li>Copy all the content of Table.sh in ‘File1.txt’ without using ‘cp’ and ‘mv’ command.
+                    </li>
+                    <li>Append the text Welcome to Sigmoid’ to the ‘File1.txt’ file.</li>
+                    <li>List all the directories and files present inside Desktop Folder</li>
+                </ul>
+                							
+               <p .><b class="ques">Question 5.</b> You have given an array. Using Bash script, print its length, maximum element, and minimum element.
+                arr=( 2 3 4 1 6 7)</p>   
+        </div>
+
+
+
+        <div>
+            <h3 class="user">Chakradhar`s Approach-- </h3>
+
+            <p class="ques"><b>Question-1</b></p>
+
+            <table  class="table table-striped table-light ">
+                <tr>
+                    <td>current_date=$(date +"Year: %Y, Month: %m, Day: %d")</td>
+                    <td> Command to fetch the date</td>
+                </tr>
+                <tr>
+                    <td>current_time=$(date +"%T")</td>
+                    <td> Command to fetch the time
+                    </td>
+                </tr>
+                <tr>
+                    <td> current_user=$(whoami) </td>
+                    <td>Command to fetch the current working user</td>
+                </tr>
+                <tr>
+                    <td>home_directory=$(echo $HOME) </td>
+                    <td>Command to fetch the Home directory</td>
+                </tr>
+                <tr>
+                    <td>current_directory=$(pwd) </td>
+                    <td> Command to fetch the current wokring directory
+                    </td>
+                </tr>
+            </table>
+   
+                                                     
+                                    
+                                       
+
+            <p class="ques"><b>Question-2</b></p>
+            <p>Used a while loop for all arguments passed in terminal if no argument is passed then an error message is diaplayed and exits with  a status code of <b>0</b></p>
+            
+            <p class="ques"><b>Question-3</b></p>
+            <p>Used <b>for loop</b> to slove it, loop through it from 2 to  <code>sqrt(num)</code> and cheked if there any divisors for the number.</p>
+            
+
+            <p class="ques"> <b> Question-4 </b> </p>
+
+            <table class="table table-striped table-light ">
+                <tr>
+                    <td><b>mkdir ~/Desktop/Assignment </b> </td>
+                    <td>To create Folder</td>
+                </tr>
+                <tr>
+                    <td> <b>touch ~/Desktop/Assignment/File1.txt</b></td>
+                    <td>To create a file</td>
+                </tr>
+                <tr>
+                    <td><b>cat ~/Desktop/Table.sh  >> ~/Desktop/Assignment/File1.txt</b></td>
+                    <td>To copy data from table.sh to file1.txt</td>
+                </tr>
+
+                <tr>
+                    <td><b>echo "Welcome to Sigmoid" >> ~/Desktop/Assignment/File1.txt</b> </td>
+                    <td>To append the string to file1.txt</td>
+                </tr>
+                <tr>
+                    <td> <b>ls -la ~/Desktop/</b> </td>
+                    <td>To show all the files in Desktop</td>
+                </tr>
+            </table>
+ 
+
+            <p><b>Question-5</b></p>
+            <table class="table table-striped table-light ">
+                <tr>
+                    <td>"${arr[*]}" | sort -nr | head -n1</td>
+                    <td>used os sort function to sort in reverse order and selected 1st element</td>
+                </tr>
+                <tr>
+                    <td>"${arr[*]}" | sort -n | head -n1</td>
+                    <td>used os sort function to sort  and selected 1st element</td>
+                </tr>
+            </table>
+
+            <p>
+                Used <b>for loop</b> to get min and max elements in the array.
+            </p>
+        </div>
+
+
+        <div>
+            <h3 class="user">Aayush`s Approach-- </h3>
+            
+
+            <p><b>Question-1</b></p>
+            <p>Used below commands to get output</p>
+            <table class="table table-striped table-light ">
+                <tr>
+                    <td>date "+DATE: %Y-%m-%d"</td>
+                    <td>Command to fetch the date
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>date "+TIME: %H:%M:%S"</td>
+                    <td>Command to fetch the time</td>
+                </tr>
+                <tr>
+                    <td>$USER</td>
+                    <td>Command to fetch the currently working user</td>
+                </tr>
+                <tr>
+                    <td>$HOME</td>
+                    <td>Command to fetch the Home directory</td>
+                </tr>
+                <tr>
+                    <td>$pwd</td>
+                    <td>Command to fetch the current working directory</td>
+                </tr>
+            </table>
+            <p class="ques"><b>Question-2</b></p>
+            <p>The written script is capable of accepting input from the command line. If no arguments have been given, it reports an error and exits the program. If not, then he initialized a counter and take a run a while loop till is less than equal to 10 and displays the fetched result by multiplying and updating the counter in every iteration.</p>
+        
+            <p class="ques"><b>Question-3</b></p>
+            <p>He created the prime function, which checks if an integer is prime or not. He flags the number as not being a prime if it is less than 2, and if it is, he runs a loop from 2 to sqrt(n) to see whether any of the other numbers divide the supplied number (inclusive of both). If any numbers were found he incremented the counter which resembles no of factors for the given number, and if the no of factors is greater than or equal to 1 which means we can assume that they are not prime because they have a divisor other than themselves and 1, which means they are not prime. Else if it is 0 they are prime as they have zero divisors.
+
+                User input is taken in and saved in a variable in the main program code before the function is run and the argument is supplied as command line parameters.
+                </p>
+
+            <p class="ques"><b>Question-4</b></p>
+        
+            <table class="table table-striped table-light ">
+                <tr>
+                    <td><b>mkdir Assignment </b> </td>
+                    <td>To create Folder</td>
+                </tr>
+                <tr>
+                    <td> <b>touch Assignment/</b></td>
+                    <td>To create a file</td>
+                </tr>
+                <tr>
+                    <td><b>cat ../Table.sh > File1.txt</b></td>
+                    <td>To copy data from table.sh to file1.txt</td>
+                </tr>
+
+                <tr>
+                    <td><b>echo "Welcome to Sigmoid" >> File1.txt</b> </td>
+                    <td>To append the string to file1.txt</td>
+                </tr>
+                <tr>
+                    <td> <b>ls  ~/Desktop/</b> </td>
+                    <td>To show floders and files in Desktop</td>
+                </tr>
+            </table>
+        <P>He had used the cat command to copy the text as it reads the content from the file and he passed it to append it to the required file, he hasn't created that explicitly but the absence of file while executing the command itself creates the file and performs the said operation.
+        </P>
+
+        <p class="ques"><b>Question-5</b></p>
+        <p>He utilized a for loop to obtain the highest and lowest element. Using the initial element in the loop as the maximum, he toured each element in the loop to check if it was bigger than the maximum value that had, presumably, been determined. If it was, he set it to the current element; otherwise, he continued traversing. He used the same procedure to determine the minimum.
+        </p>
+
+        </div>
+    </div>
+</body>
+</html>
