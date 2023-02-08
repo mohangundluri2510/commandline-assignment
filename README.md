@@ -64,7 +64,7 @@ We verify whether any arguments have been passed, and if not, we issue an error 
 Write a Function in bash script to check if the number is prime or not? It should support the following requirement. - The script should accept the input from the User.
 
 <p><b> Apporach - </b> </p>
-We created a function called is prime to determine whether a number is prime or not. If the number is lessthan than 2, we indicate that it is not a prime, and if not, we run a loop from 2 to number/2 to see if any of the above numbers divide the given number. If we found any numbers, we can conclude that the number is not a prime because it has a divisor other than 1 and itself.
+We created a function called is prime to determine whether a number is prime or not. If the number is lessthan than 2, we indicate that it is not a prime, and if not, we run a loop from 2 to sqrt(number) to see if any of the above numbers divide the given number. If we found any numbers, we can conclude that the number is not a prime because it has a divisor other than 1 and itself.
 
 We receive user input in the main code, store it in a variable, and then call the function while sending the argument as command line arguments.
 
